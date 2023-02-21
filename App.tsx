@@ -1,11 +1,14 @@
 import { StatusBar } from "expo-status-bar"
-import { Text, View } from "react-native"
+import { SafeAreaView, Text, View } from "react-native"
 
 export default function App() {
    return (
-      <View className="bg-red-500">
-         <Text>Open up App.js to start working on your app!</Text>
+      <SafeAreaView className="bg-white flex-1">
+         <View className="py-10 px-4 flex flex-row">
+            <Text className="text-3xl">50%</Text>
+            <View className=""></View>
+         </View>
          <StatusBar style="auto" />
-      </View>
+      </SafeAreaView>
    )
 }
