@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar"
-import { SafeAreaView, Text, View } from "react-native"
+import { Text, View } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
 import { NavigationContainer } from "@react-navigation/native"
 import { SafeAreaProvider } from "react-native-safe-area-context"
