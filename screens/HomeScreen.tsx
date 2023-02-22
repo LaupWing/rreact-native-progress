@@ -1,19 +1,12 @@
 import { View, Text, FlatList } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
-import { useSafeAreaInsets } from "react-native-safe-area-context"
+import { useSafeAreaInsets, initialWindowMetrics, SafeAreaView } from "react-native-safe-area-context"
 import {tasks} from "../data"
 import Checkbox from "expo-checkbox"
 
 const HomeScreen = () => {
-   const insets = useSafeAreaInsets()
-   
    return (
-      <View 
-         className="flex-1"
-         style={{
-            paddingTop: insets.top
-         }}
-      >
+      <SafeAreaView className="flex-1">
          <View className="flex-1">
             <View className="px-4 py-3 flex flex-row items-center border-b border-gray-300">
                <Ionicons name="menu" size={30} color="black" />
@@ -22,7 +15,7 @@ const HomeScreen = () => {
                   <View className="w-[48%] h-2 bg-purple-500 rounded-full"></View>
                </View>
             </View>
-            <View>
+            <View className="flex-1">
                <FlatList
                   data={tasks}
                   renderItem={({item}) => {
@@ -42,7 +35,7 @@ const HomeScreen = () => {
                />
             </View>
          </View>
-      </View>
+      </SafeAreaView>
    )
 }
 export default HomeScreen
