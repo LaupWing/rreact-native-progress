@@ -1,8 +1,8 @@
 import { View, Text, FlatList } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
-import { useSafeAreaInsets, initialWindowMetrics, SafeAreaView } from "react-native-safe-area-context"
+import { SafeAreaView } from "react-native-safe-area-context"
 import {tasks} from "../data"
-import Checkbox from "expo-checkbox"
+import Checkbox from "../components/Checkbox"
 
 const HomeScreen = () => {
    return (
@@ -20,15 +20,9 @@ const HomeScreen = () => {
                   data={tasks}
                   renderItem={({item}) => {
                      return (
-                        <View className="px-3 flex-row justify-between py-2 border-b border-gray-300">
-                           <Text className="text-lg max-w-[90%]">{item.text}</Text>
-                           <Checkbox 
-                              className="flex-shrink-0"
-                              style={{
-                                 margin: 2,
-                                 width: 20
-                              }}
-                           />
+                        <View className="px-3 flex-row justify-between py-2 border-b border-gray-300 items-center">
+                           <Text className="text-lg flex-1">{item.text}</Text>
+                           <Checkbox className="mx-2"/>
                         </View>
                      )
                   }}
