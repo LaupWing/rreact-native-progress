@@ -2,6 +2,7 @@ import { View, Text, FlatList } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
 import { useSafeAreaInsets } from "react-native-safe-area-context"
 import {tasks} from "../data"
+import Checkbox from "expo-checkbox"
 
 const HomeScreen = () => {
    const insets = useSafeAreaInsets()
@@ -26,8 +27,15 @@ const HomeScreen = () => {
                   data={tasks}
                   renderItem={({item}) => {
                      return (
-                        <View className="px-3 py-2 border-b border-gray-300">
-                           <Text className="text-lg">{item.text}</Text>
+                        <View className="px-3 flex-row justify-between py-2 border-b border-gray-300">
+                           <Text className="text-lg max-w-[90%]">{item.text}</Text>
+                           <Checkbox 
+                              className="flex-shrink-0"
+                              style={{
+                                 margin: 2,
+                                 width: 20
+                              }}
+                           />
                         </View>
                      )
                   }}
