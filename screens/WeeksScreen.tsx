@@ -1,7 +1,7 @@
 import { View, Text } from "react-native"
 const WeeksScreen = () => {
    return (
-      <View>
+      <View className="flex-1">
          <Text>WeeksScreen</Text>
       </View>
    )
