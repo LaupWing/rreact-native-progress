@@ -1,7 +1,7 @@
+import "react-native-gesture-handler"
 import { NavigationContainer } from "@react-navigation/native"
 import { SafeAreaProvider } from "react-native-safe-area-context"
 import HomeScreen from "./screens/HomeScreen"
-// import "react-native-gesture-handler"
 import { createDrawerNavigator } from "@react-navigation/drawer"
 import MonthScreen from "./screens/MonthScreen"
 import WeeksScreen from "./screens/WeeksScreen"
