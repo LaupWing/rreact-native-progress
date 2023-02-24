@@ -19,8 +19,10 @@ export default function App() {
       <SafeAreaProvider>
          <NavigationContainer>
             <Drawer.Navigator
+               defaultStatus="open"
                screenOptions={{
-                  drawerType: "front"
+                  drawerType: "front",
+                  headerShown: false
                }}
             >
                <Drawer.Screen name="Home" component={HomeScreen} />
