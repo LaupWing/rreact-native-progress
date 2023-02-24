@@ -22,8 +22,10 @@ export default function App() {
                defaultStatus="open"
                screenOptions={{
                   drawerType: "front",
-                  headerShown: false
+                  headerShown: false,
+                  drawerActiveTintColor: "#e91e63"
                }}
+               
             >
                <Drawer.Screen name="Home" component={HomeScreen} />
                <Drawer.Screen name="Month" component={MonthScreen} />
