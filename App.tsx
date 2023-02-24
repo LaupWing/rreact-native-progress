@@ -1,7 +1,7 @@
 import { NavigationContainer } from "@react-navigation/native"
 import { SafeAreaProvider } from "react-native-safe-area-context"
 import HomeScreen from "./screens/HomeScreen"
-import "react-native-gesture-handler"
+// import "react-native-gesture-handler"
 import { createDrawerNavigator } from "@react-navigation/drawer"
 import MonthScreen from "./screens/MonthScreen"
 import WeeksScreen from "./screens/WeeksScreen"
@@ -20,9 +20,8 @@ export default function App() {
          <NavigationContainer>
             <Drawer.Navigator
                screenOptions={{
-                  headerShown: false,
+                  drawerType: "front"
                }}
-               initialRouteName="Home"
             >
                <Drawer.Screen name="Home" component={HomeScreen} />
                <Drawer.Screen name="Month" component={MonthScreen} />
