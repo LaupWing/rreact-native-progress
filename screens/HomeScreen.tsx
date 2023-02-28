@@ -6,13 +6,25 @@ import Checkbox from "../components/Checkbox"
 import { useNavigation } from "@react-navigation/native"
 import { DrawerNavigationProp } from "@react-navigation/drawer"
 import { RootStackParamsList } from "../App"
+import ReactNativeModal from "react-native-modal"
+import { TextInput } from "react-native-gesture-handler"
+import { useState } from "react"
 
 const HomeScreen = () => {
    const navigation = useNavigation<DrawerNavigationProp<RootStackParamsList>>()
+   const [showModal, setShowModal] = useState<boolean>(false)
 
    return (
       <SafeAreaView className="flex-1 bg-white">
-         
+         <ReactNativeModal isVisible={true}>
+            <View className="bg-white rounded p-4 space-y-2">
+               <Text className="uppercase font-bold tracking-wider">Add a new task!</Text>
+               <TextInput className="bg-neutral-100 rounded p-1 border border-neutral-300" placeholder="Task"/>
+               <TouchableOpacity className="bg-purple-600 ml-auto px-4 py-1 rounded">
+                  <Text className="text-white uppercase">Create</Text>
+               </TouchableOpacity>
+            </View>
+         </ReactNativeModal>
          <View className="flex-1">
             <View className="px-4 py-5 flex flex-row items-center border-b border-gray-300">
                <Ionicons
