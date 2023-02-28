@@ -3,14 +3,22 @@ import { Ionicons } from "@expo/vector-icons"
 import { SafeAreaView } from "react-native-safe-area-context"
 import {tasks} from "../data"
 import Checkbox from "../components/Checkbox"
+import { useNavigation } from "@react-navigation/native"
 
 const HomeScreen = () => {
+   const navigation = useNavigation()
    return (
       <SafeAreaView className="flex-1 bg-white">
          <View className="flex-1">
             <View className="px-4 py-5 flex flex-row items-center border-b border-gray-300">
                <Ionicons 
-                  name="menu" size={30} color="black" />
+                  name="menu" 
+                  size={30} 
+                  color="black" 
+                  onPress={() => {
+                     console.log(navigation)
+                  }}
+               />
                <Text className="text-2xl mx-2">50%</Text>
                <View className="border-purple-500 border-2 flex-1 rounded-full p-0.5 ml-2">
                   <View className="w-[48%] h-2 bg-purple-500 rounded-full"></View>
