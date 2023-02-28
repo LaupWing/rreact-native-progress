@@ -4,9 +4,12 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import {tasks} from "../data"
 import Checkbox from "../components/Checkbox"
 import { useNavigation } from "@react-navigation/native"
+import { DrawerNavigationProp } from "@react-navigation/drawer"
+import { RootStackParamsList } from "../App"
 
 const HomeScreen = () => {
-   const navigation = useNavigation()
+   const navigation = useNavigation<DrawerNavigationProp<RootStackParamsList>>()
+
    return (
       <SafeAreaView className="flex-1 bg-white">
          <View className="flex-1">
@@ -15,9 +18,7 @@ const HomeScreen = () => {
                   name="menu" 
                   size={30} 
                   color="black" 
-                  onPress={() => {
-                     console.log(navigation)
-                  }}
+                  onPress={navigation.openDrawer}
                />
                <Text className="text-2xl mx-2">50%</Text>
                <View className="border-purple-500 border-2 flex-1 rounded-full p-0.5 ml-2">
