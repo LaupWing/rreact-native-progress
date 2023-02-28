@@ -1,7 +1,7 @@
-import { View, Text, FlatList } from "react-native"
+import { View, Text, FlatList, TouchableOpacity } from "react-native"
 import { Ionicons } from "@expo/vector-icons"
 import { SafeAreaView } from "react-native-safe-area-context"
-import {tasks} from "../data"
+import { tasks } from "../data"
 import Checkbox from "../components/Checkbox"
 import { useNavigation } from "@react-navigation/native"
 import { DrawerNavigationProp } from "@react-navigation/drawer"
@@ -12,12 +12,13 @@ const HomeScreen = () => {
 
    return (
       <SafeAreaView className="flex-1 bg-white">
+         
          <View className="flex-1">
             <View className="px-4 py-5 flex flex-row items-center border-b border-gray-300">
-               <Ionicons 
-                  name="menu" 
-                  size={30} 
-                  color="black" 
+               <Ionicons
+                  name="menu"
+                  size={30}
+                  color="black"
                   onPress={navigation.openDrawer}
                />
                <Text className="text-2xl mx-2">50%</Text>
@@ -28,18 +29,33 @@ const HomeScreen = () => {
             <View className="flex-1">
                <FlatList
                   data={tasks}
-                  renderItem={({item}) => {
+                  contentContainerStyle={{
+                     paddingBottom: 60
+                  }}
+                  renderItem={({ item }) => {
                      return (
                         <View className="px-3 flex-row justify-between py-2 border-b border-gray-300 items-center">
                            <Text className="text-lg flex-1">{item.text}</Text>
-                           <Checkbox className="mx-2"/>
+                           <Checkbox className="mx-2" />
                         </View>
                      )
                   }}
                />
             </View>
+            <TouchableOpacity
+               className="absolute bottom-0 right-4"
+            >
+               <Ionicons 
+                  name="md-add-circle" 
+                  size={60} 
+                  color="black" 
+               />
+            </TouchableOpacity>
          </View>
       </SafeAreaView>
    )
 }
 export default HomeScreen
+
+
+
