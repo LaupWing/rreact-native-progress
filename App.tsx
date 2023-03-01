@@ -19,7 +19,6 @@ export default function App() {
       <SafeAreaProvider>
          <NavigationContainer>
             <Drawer.Navigator
-               defaultStatus="open"
                screenOptions={{
                   drawerType: "front",
                   headerShown: false,
