@@ -22,9 +22,8 @@ export default function App() {
                screenOptions={{
                   drawerType: "front",
                   headerShown: false,
-                  drawerActiveTintColor: "#e91e63"
+                  drawerActiveTintColor: "#A855F7"
                }}
-               
             >
                <Drawer.Screen name="Home" component={HomeScreen} />
                <Drawer.Screen name="Month" component={MonthScreen} />

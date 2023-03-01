@@ -64,7 +64,7 @@ const HomeScreen = () => {
                <Ionicons 
                   name="md-add-circle" 
                   size={60} 
-                  color="black" 
+                  color="#A855F7" 
                />
             </TouchableOpacity>
          </View>
