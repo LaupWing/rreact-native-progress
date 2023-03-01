@@ -16,10 +16,13 @@ const HomeScreen = () => {
 
    return (
       <SafeAreaView className="flex-1 bg-white">
-         <ReactNativeModal isVisible={true}>
+         <ReactNativeModal 
+            isVisible={showModal} 
+            onBackdropPress={() => setShowModal(false)}
+         >
             <View className="bg-white rounded p-4 space-y-2">
                <Text className="uppercase font-bold tracking-wider">Add a new task!</Text>
-               <TextInput className="bg-neutral-100 rounded p-1 border border-neutral-300" placeholder="Task"/>
+               <TextInput className="bg-neutral-100 rounded py-1 px-2 border border-neutral-300" placeholder="Task"/>
                <TouchableOpacity className="bg-purple-600 ml-auto px-4 py-1 rounded">
                   <Text className="text-white uppercase">Create</Text>
                </TouchableOpacity>
@@ -56,6 +59,7 @@ const HomeScreen = () => {
             </View>
             <TouchableOpacity
                className="absolute bottom-0 right-4"
+               onPress={() => setShowModal(true)}
             >
                <Ionicons 
                   name="md-add-circle" 
