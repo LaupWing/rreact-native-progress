@@ -51,7 +51,7 @@ const HomeScreen = () => {
                      return (
                         <View className="px-3 flex-row justify-between py-2 border-b border-gray-300 items-center">
                            <Text className="text-lg flex-1">{item.text}</Text>
-                           <Checkbox className="mx-2" />
+                           <Checkbox checked={Math.random() > 0.5} className="mx-2" />
                         </View>
                      )
                   }}

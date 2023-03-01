@@ -2,11 +2,15 @@ import { FC } from "react"
 import { View } from "react-native"
 import { FontAwesome } from "@expo/vector-icons"
 
-const Checkbox: FC<any> = (props) => {
+interface CheckboxProps {
+   checked: boolean
+   className?: string
+}
+
+const Checkbox: FC<CheckboxProps> = ({className = ""}) => {
    return (
       <View
-         {...props}
-         className="w-8 h-8 rounded border-2 border-purple-500 flex items-center justify-center"
+         className={"w-8 h-8 rounded border-2 border-purple-500 flex items-center justify-center "+ className}
       >
          <View className="flex-1 bg-purple-500 flex items-center justify-center w-full scale-105 absolute inset-0">
          </View>
