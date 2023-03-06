@@ -15,6 +15,13 @@ const all_available = Array.from(range.by("days")).every((date) => {
    return formattedDates.find(x => moment(x).format(formatStyle) === moment(date).format(formatStyle))
 })
 
+if(!all_available){
+   const not_available = Array.from(range.by("days")).filter((date) => {
+      return !formattedDates.find(x => moment(x).format(formatStyle) === moment(date).format(formatStyle))
+   }).map(x => moment(x).format(formatStyle))
+   console.log(not_available)
+}
+
 const range2 = moment.range(maxium_date, moment())
 console.log(Array.from(range2.by("days")).map(x => moment(x).format(formatStyle)))
 // console.log(diff.diff(, formattedDates))
