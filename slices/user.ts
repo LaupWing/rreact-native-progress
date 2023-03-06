@@ -14,4 +14,8 @@ export const userSlice = createSlice({
 
 export const { decrement } = userSlice.actions
 
+export const fetchTasks = () => async () => {
+
+}
+
 export default userSlice.reducer
