@@ -11,7 +11,7 @@ export type RootStackParamsList = {
 
 const Drawer = createDrawerNavigator<RootStackParamsList>()
 
-const Home2Screen = () => {
+const HomeScreen = () => {
    return (
       <Drawer.Navigator
          screenOptions={{
@@ -26,4 +26,4 @@ const Home2Screen = () => {
       </Drawer.Navigator>
    )
 }
-export default Home2Screen
+export default HomeScreen
