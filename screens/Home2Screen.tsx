@@ -16,19 +16,17 @@ const Drawer = createDrawerNavigator<RootStackParamsList>()
 const Home2Screen = () => {
    return (
       <SafeAreaProvider>
-         <NavigationContainer>
-            <Drawer.Navigator
-               screenOptions={{
-                  drawerType: "front",
-                  headerShown: false,
-                  drawerActiveTintColor: "#A855F7"
-               }}
-            >
-               <Drawer.Screen name="Home" component={HomeScreen} />
-               <Drawer.Screen name="Month" component={MonthScreen} />
-               <Drawer.Screen name="Week" component={WeeksScreen} />
-            </Drawer.Navigator>
-         </NavigationContainer>
+         <Drawer.Navigator
+            screenOptions={{
+               drawerType: "front",
+               headerShown: false,
+               drawerActiveTintColor: "#A855F7"
+            }}
+         >
+            <Drawer.Screen name="Home" component={HomeScreen} />
+            <Drawer.Screen name="Month" component={MonthScreen} />
+            <Drawer.Screen name="Week" component={WeeksScreen} />
+         </Drawer.Navigator>
       </SafeAreaProvider>
    )
 }

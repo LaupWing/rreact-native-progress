@@ -7,6 +7,7 @@ import MonthScreen from "./screens/MonthScreen"
 import WeeksScreen from "./screens/WeeksScreen"
 import { Provider } from "react-redux"
 import { store } from "./app/store"
+import { createNativeStackNavigator } from "@react-navigation/native-stack"
 
 export type RootStackParamsList = {
    Home: undefined
@@ -16,22 +17,15 @@ export type RootStackParamsList = {
 
 const Drawer = createDrawerNavigator<RootStackParamsList>()
 
+
+const Stack = createNativeStackNavigator()
+
 export default function App() {
    return (
       <Provider store={store}>
          <SafeAreaProvider>
             <NavigationContainer>
-               <Drawer.Navigator
-                  screenOptions={{
-                     drawerType: "front",
-                     headerShown: false,
-                     drawerActiveTintColor: "#A855F7"
-                  }}
-               >
-                  <Drawer.Screen name="Home" component={HomeScreen} />
-                  <Drawer.Screen name="Month" component={MonthScreen} />
-                  <Drawer.Screen name="Week" component={WeeksScreen} />
-               </Drawer.Navigator>
+               
             </NavigationContainer>
          </SafeAreaProvider>
       </Provider>
