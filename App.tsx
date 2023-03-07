@@ -4,7 +4,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context"
 import { Provider } from "react-redux"
 import { store } from "./app/store"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import Home2Screen from "./screens/Home2Screen"
+import Home2Screen from "./screens/HomeScreen"
 
 export type RootStackParamsList = {
    Home: undefined
