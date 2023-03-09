@@ -17,7 +17,7 @@ const WeeksScreen = () => {
       .filter((value, index, array)=> {
          return array.indexOf(value) === index;
        })
-   console.log(weeks)
+   
    return (
       <SafeAreaView className="flex-1 bg-white">
          <View className="flex-1">
