@@ -4,7 +4,7 @@ import MonthScreen from "./MonthScreen"
 import WeeksScreen from "./WeeksScreen"
 
 export type RootStackParamsList = {
-   Home: undefined
+   Day: undefined
    Month: undefined
    Week: undefined
 }
@@ -20,9 +20,9 @@ const HomeScreen = () => {
             drawerActiveTintColor: "#A855F7"
          }}
       >
-         <Drawer.Screen name="Home" component={DayScreen} />
-         <Drawer.Screen name="Month" component={MonthScreen} />
+         <Drawer.Screen name="Day" component={DayScreen} />
          <Drawer.Screen name="Week" component={WeeksScreen} />
+         <Drawer.Screen name="Month" component={MonthScreen} />
       </Drawer.Navigator>
    )
 }
