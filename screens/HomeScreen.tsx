@@ -3,13 +3,13 @@ import DayScreen from "./DayScreen"
 import MonthScreen from "./MonthScreen"
 import WeeksScreen from "./WeeksScreen"
 
-export type RootStackParamsList = {
+export type HomeStackParamsList = {
    Day: undefined
    Month: undefined
    Week: undefined
 }
 
-const Drawer = createDrawerNavigator<RootStackParamsList>()
+const Drawer = createDrawerNavigator<HomeStackParamsList>()
 
 const HomeScreen = () => {
    return (
