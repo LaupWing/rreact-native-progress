@@ -1,4 +1,4 @@
 export default {
    test_account: "",
-   date_formt: "DD-MM-YYYY"
+   date_format: "DD-MM-YYYY"
 }
