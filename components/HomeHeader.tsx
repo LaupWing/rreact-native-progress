@@ -17,10 +17,7 @@ const HomeHeader:FC<PropsWithChildren> = ({
             color="black"
             onPress={navigation.openDrawer}
          />
-         <Text className="text-2xl mx-2">50%</Text>
-         <View className="border-purple-500 border-2 flex-1 rounded-full p-0.5 ml-2">
-            <View className="w-[48%] h-2 bg-purple-500 rounded-full"></View>
-         </View>
+         { children }
       </View>
    )
 }

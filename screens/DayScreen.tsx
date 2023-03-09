@@ -9,6 +9,7 @@ import { RootStackParamsList } from "../App"
 import ReactNativeModal from "react-native-modal"
 import { TextInput } from "react-native-gesture-handler"
 import { useState } from "react"
+import HomeHeader from "../components/HomeHeader"
 
 const HomeScreen = () => {
    const navigation = useNavigation<DrawerNavigationProp<RootStackParamsList>>()
@@ -29,18 +30,12 @@ const HomeScreen = () => {
             </View>
          </ReactNativeModal>
          <View className="flex-1">
-            <View className="px-4 py-5 flex flex-row items-center border-b border-gray-300">
-               <Ionicons
-                  name="menu"
-                  size={30}
-                  color="black"
-                  onPress={navigation.openDrawer}
-               />
+            <HomeHeader>
                <Text className="text-2xl mx-2">50%</Text>
                <View className="border-purple-500 border-2 flex-1 rounded-full p-0.5 ml-2">
                   <View className="w-[48%] h-2 bg-purple-500 rounded-full"></View>
                </View>
-            </View>
+            </HomeHeader>
             <View className="flex-1">
                <FlatList
                   data={tasks}
