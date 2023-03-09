@@ -4,15 +4,15 @@ import { SafeAreaProvider } from "react-native-safe-area-context"
 import { Provider } from "react-redux"
 import { store } from "./app/store"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import Home2Screen from "./screens/HomeScreen"
+import HomeScreen from "./screens/HomeScreen"
+import LoginScreen from "./screens/LoginScreen"
 
 export type RootStackParamsList = {
    Home: undefined
-   Month: undefined
-   Week: undefined
+   Login: undefined
 }
 
-const Stack = createNativeStackNavigator()
+const Stack = createNativeStackNavigator<RootStackParamsList>()
 
 export default function App() {
    return (
@@ -20,7 +20,8 @@ export default function App() {
          <SafeAreaProvider>
             <NavigationContainer>
                <Stack.Navigator>
-                  <Stack.Screen name="Home" component={Home2Screen}/>
+                  <Stack.Screen name="Home" component={HomeScreen}/>
+                  <Stack.Screen name="Login" component={LoginScreen}/>
                </Stack.Navigator>
             </NavigationContainer>
          </SafeAreaProvider>
