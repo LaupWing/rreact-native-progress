@@ -1,10 +1,11 @@
 import type {Moment} from "moment"
 import moment from "moment"
-import { View, Text} from "react-native"
+import { View, Text, FlatList } from "react-native"
 import { SafeAreaView } from "react-native-safe-area-context"
 import HomeHeader from "../components/HomeHeader"
 import config from "../config"
 import {tasks} from "../data"
+import { Feather } from "@expo/vector-icons"
 
 const WeeksScreen = () => {
    const weeks = Object.keys(tasks[0].dates)
@@ -26,6 +27,23 @@ const WeeksScreen = () => {
                   <View className="w-[48%] h-2 bg-purple-500 rounded-full"></View>
                </View>
             </HomeHeader>
+            <View className="flex-1">
+               <FlatList
+                  data={weeks}
+                  contentContainerStyle={{
+                     paddingBottom: 60
+                  }}
+                  renderItem={({ item }) => {
+                     return (
+                        <View className="px-3 flex-row justify-between py-2 border-b border-gray-300 items-center">
+                           {/* <Text className="text-lg flex-1">{moment()}</Text> */}
+                           <Text className="text-lg flex-1">{item}</Text>
+                           <Feather name="chevron-down" size={24} color="black" />
+                        </View>
+                     )
+                  }}
+               />
+            </View>
          </View>
       </SafeAreaView>
    )
