@@ -5,7 +5,6 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import HomeHeader from "../components/HomeHeader"
 import config from "../config"
 import {tasks} from "../data"
-import { Feather } from "@expo/vector-icons"
 import WeekItem from "../components/WeekItem"
 
 const WeeksScreen = () => {
