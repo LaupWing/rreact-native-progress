@@ -13,11 +13,14 @@ const WeeksScreen = () => {
       .sort((left:Moment, right:Moment) => {
          return moment.utc(left).diff(moment.utc(right))
       })
-      .map(d => d.isoWeek()) 
-      .filter((value, index, array)=> {
-         return array.indexOf(value) === index;
-       })
-   
+      .map(d => ({
+         week: d.isoWeek(),
+         year: d.year()
+      })) 
+      // .filter((value, index, array)=> {
+      //    return array.indexOf(value) === index;
+      //  })
+   console.log(weeks)
    return (
       <SafeAreaView className="flex-1 bg-white">
          <View className="flex-1">
@@ -37,7 +40,7 @@ const WeeksScreen = () => {
                      return (
                         <View className="px-3 flex-row justify-between py-2 border-b border-gray-300 items-center">
                            {/* <Text className="text-lg flex-1">{moment()}</Text> */}
-                           <Text className="text-lg flex-1">{item}</Text>
+                           <Text className="text-lg flex-1">{item.week}</Text>
                            <Feather name="chevron-down" size={24} color="black" />
                         </View>
                      )
