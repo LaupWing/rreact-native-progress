@@ -33,10 +33,17 @@ const WeekItem:FC<WeekItemProps> = ({
    return (
       <>
          {progress ? (<View className="px-3 py-2 border-b border-gray-300 w-full">
-            <View className="flex-row flex-1 justify-between">
-               <View className="flex flex-row space-x-2">
+            <View className="flex-row flex-1 justify-between items-center">
+               <View className="flex flex-row space-x-2 shrink-0 w-20">
                   <Text className="text-lg">{year}</Text>
                   <Text className="text-lg">{weekNumber}</Text>
+               </View>
+               <View className="border-purple-500 border-2 flex-1 rounded-full p-0.5 mx-2">
+                  <View 
+                     style={{
+                        width: `${progress}%`
+                     }}
+                     className="h-1.5 bg-purple-500 rounded-full"></View>
                </View>
                <Feather name="chevron-down" size={24} color="black" />
             </View>
