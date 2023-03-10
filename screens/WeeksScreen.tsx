@@ -17,9 +17,9 @@ const WeeksScreen = () => {
          week: d.isoWeek(),
          year: d.year()
       })) 
-      // .filter((value, index, array)=> {
-      //    return array.indexOf(value) === index;
-      //  })
+      .filter((value, index, array)=> {
+         return array.findIndex(v => v.week === value.week && v.year === value.year) === index
+       })
    console.log(weeks)
    return (
       <SafeAreaView className="flex-1 bg-white">
@@ -39,8 +39,10 @@ const WeeksScreen = () => {
                   renderItem={({ item }) => {
                      return (
                         <View className="px-3 flex-row justify-between py-2 border-b border-gray-300 items-center">
-                           {/* <Text className="text-lg flex-1">{moment()}</Text> */}
-                           <Text className="text-lg flex-1">{item.week}</Text>
+                           <View className="flex flex-row space-x-2">
+                              <Text className="text-lg">{item.year}</Text>
+                              <Text className="text-lg">{item.week}</Text>
+                           </View>
                            <Feather name="chevron-down" size={24} color="black" />
                         </View>
                      )
