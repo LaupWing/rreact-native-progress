@@ -6,6 +6,7 @@ import HomeHeader from "../components/HomeHeader"
 import config from "../config"
 import {tasks} from "../data"
 import { Feather } from "@expo/vector-icons"
+import WeekItem from "../components/WeekItem"
 
 const WeeksScreen = () => {
    const weeks = Object.keys(tasks[0].dates)
@@ -20,7 +21,7 @@ const WeeksScreen = () => {
       .filter((value, index, array)=> {
          return array.findIndex(v => v.week === value.week && v.year === value.year) === index
        })
-   console.log(weeks)
+       
    return (
       <SafeAreaView className="flex-1 bg-white">
          <View className="flex-1">
@@ -36,17 +37,12 @@ const WeeksScreen = () => {
                   contentContainerStyle={{
                      paddingBottom: 60
                   }}
-                  renderItem={({ item }) => {
-                     return (
-                        <View className="px-3 flex-row justify-between py-2 border-b border-gray-300 items-center">
-                           <View className="flex flex-row space-x-2">
-                              <Text className="text-lg">{item.year}</Text>
-                              <Text className="text-lg">{item.week}</Text>
-                           </View>
-                           <Feather name="chevron-down" size={24} color="black" />
-                        </View>
-                     )
-                  }}
+                  renderItem={({ item }) => (
+                     <WeekItem
+                        weekNumber={item.week}
+                        year={item.year}
+                     />
+                  )}
                />
             </View>
          </View>
