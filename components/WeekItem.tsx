@@ -40,7 +40,9 @@ const WeekItem:FC<WeekItemProps> = ({
             <Feather name="chevron-down" size={24} color="black" />
          </View>
          <View>
-
+            {_tasks.map(x => (
+               <Text className={x.finished ? "text-green-500" : "text-red-400"}>{x.text}</Text>
+            ))}
          </View>
       </View>
    )
