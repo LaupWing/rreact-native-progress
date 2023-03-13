@@ -1,5 +1,5 @@
-import type { FC } from "react"
-import { View, Text } from "react-native"
+import { FC, useState } from "react"
+import { View, Text, ScrollView } from "react-native"
 import { Feather } from "@expo/vector-icons"
 import moment from "moment"
 import { tasks } from "../data"
@@ -16,6 +16,7 @@ const WeekItem:FC<WeekItemProps> = ({
    year
 }) => {
    const weekObj = moment().year(year).isoWeek(weekNumber) 
+   const [collapsed, setCollapsed] = useState(true)
    const _tasks = tasks
       .filter(task => {
          const dateExists = Object.keys(task.dates).find(d => moment(d, config.date_format).isSame(weekObj, "week"))
@@ -33,7 +34,7 @@ const WeekItem:FC<WeekItemProps> = ({
    const progress = Math.round((_tasks.filter(x=>x.finished).length / _tasks.length) * 100)
    return (
       <>
-         {progress ? (<View className="px-3 py-2 border-b border-gray-300 w-full">
+         {progress ? (<ScrollView className="px-3 py-2 border-b border-gray-300 w-full">
             <View className="flex-row flex-1 justify-between items-center">
                <View className="flex flex-row space-x-2 shrink-0 w-20">
                   <Text className="text-lg">{year}</Text>
@@ -48,12 +49,14 @@ const WeekItem:FC<WeekItemProps> = ({
                </View>
                <Feather name="chevron-down" size={24} color="black" />
             </View>
-            <View>
-               {_tasks.map(x => (
-                  <Text className={x.finished ? "text-green-500" : "text-red-400"}>{x.text}</Text>
-               ))}
-            </View>
-         </View>) : null}
+            <Collapsible duration={2000} align="center" collapsed={false}>
+               <View>
+                  {_tasks.map(x => (
+                     <Text className={x.finished ? "text-green-500" : "text-red-400"}>{x.text}</Text>
+                     ))}
+               </View>
+            </Collapsible>
+         </ScrollView>) : null}
       </>
    )
 }
