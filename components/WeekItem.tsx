@@ -1,5 +1,5 @@
 import { FC, useState } from "react"
-import { View, Text, ScrollView } from "react-native"
+import { View, Text, ScrollView, TouchableOpacity } from "react-native"
 import { Feather } from "@expo/vector-icons"
 import moment from "moment"
 import { tasks } from "../data"
@@ -35,7 +35,10 @@ const WeekItem:FC<WeekItemProps> = ({
    return (
       <>
          {progress ? (<ScrollView className="px-3 py-2 border-b border-gray-300 w-full">
-            <View className="flex-row flex-1 justify-between items-center">
+            <TouchableOpacity 
+               className="flex-row flex-1 justify-between items-center"
+               onPress={() => setCollapsed(c => !c)}
+            >
                <View className="flex flex-row space-x-2 shrink-0 w-20">
                   <Text className="text-lg">{year}</Text>
                   <Text className="text-lg">{weekNumber}</Text>
@@ -48,9 +51,9 @@ const WeekItem:FC<WeekItemProps> = ({
                      className="h-1.5 bg-purple-500 rounded-full"></View>
                </View>
                <Feather name="chevron-down" size={24} color="black" />
-            </View>
+            </TouchableOpacity>
             {/* @ts-ignore */}
-            <Collapsible duration={2000} align="center" collapsed={collapsed}>
+            <Collapsible collapsed={collapsed}>
                <View>
                   {_tasks.map((x, i) => (
                      <Text 
