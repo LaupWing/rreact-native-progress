@@ -4,6 +4,7 @@ import { Feather } from "@expo/vector-icons"
 import moment from "moment"
 import { tasks } from "../data"
 import config from "../config"
+import Collapsible from "react-native-collapsible"
 
 interface WeekItemProps {
    weekNumber: number,
@@ -47,11 +48,11 @@ const WeekItem:FC<WeekItemProps> = ({
                </View>
                <Feather name="chevron-down" size={24} color="black" />
             </View>
-            {/* <View>
+            <View>
                {_tasks.map(x => (
                   <Text className={x.finished ? "text-green-500" : "text-red-400"}>{x.text}</Text>
                ))}
-            </View> */}
+            </View>
          </View>) : null}
       </>
    )
