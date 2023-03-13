@@ -49,10 +49,14 @@ const WeekItem:FC<WeekItemProps> = ({
                </View>
                <Feather name="chevron-down" size={24} color="black" />
             </View>
-            <Collapsible duration={2000} align="center" collapsed={false}>
+            {/* @ts-ignore */}
+            <Collapsible duration={2000} align="center" collapsed={collapsed}>
                <View>
-                  {_tasks.map(x => (
-                     <Text className={x.finished ? "text-green-500" : "text-red-400"}>{x.text}</Text>
+                  {_tasks.map((x, i) => (
+                     <Text 
+                        className={x.finished ? "text-green-500" : "text-red-400"}
+                        key={i}
+                     >{x.text}</Text>
                      ))}
                </View>
             </Collapsible>
